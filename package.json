@@ -34,11 +34,14 @@
     "@modern-js/prod-server": "^2.64.1",
     "@modern-js/runtime": "^2.64.1",
     "@semi-bot/semi-theme-automap": "^1.0.0",
+    "dayjs": "^1.11.13",
+    "i18next": "^25.1.2",
     "koa": "^2.15.3",
     "koa-body": "^6.0.1",
     "koa-logger": "^3.2.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.5.1"
   },
   "devDependencies": {
     "@douyinfe/semi-rspack-plugin": "^2.73.0",

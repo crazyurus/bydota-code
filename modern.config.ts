@@ -26,7 +26,7 @@ export default defineConfig({
     tailwindcssPlugin(),
   ],
   html: {
-    title: '比亚迪定制版地图激活查询工具',
+    title: '比亚迪 OTA 验证码查询工具',
   },
   tools: {
     sass: {
