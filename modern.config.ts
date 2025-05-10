@@ -11,7 +11,7 @@ export default defineConfig({
     enableHandleWeb: process.env.NODE_ENV === 'production',
   },
   server: {
-    port: 8889,
+    port: 8890,
   },
   runtime: {
     router: true,
