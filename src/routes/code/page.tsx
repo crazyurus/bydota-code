@@ -34,23 +34,29 @@ function IndexPage(): JSX.Element {
 
   return (
     <div className={styles.container}>
-      <Form onSubmit={values => handleGenerate(values)}>
-        <Form.Select
+      <Form
+        initValues={{ mcu: 13 }}
+        onSubmit={values => handleGenerate(values)}
+      >
+        <Form.RadioGroup
           field="mcu"
           label="控制器版本"
-          placeholder="可在多媒体版本对话框中查看，例如：13.5.5"
-          optionList={mcuVersions.map(item => ({
-            label: item.toString(),
-            value: item,
-          }))}
-          style={{ width: '100%' }}
+          extraText="可在多媒体版本对话框中查看"
+          type="button"
           rules={[
             {
               required: true,
               message: '请选择控制器版本',
             },
           ]}
-        />
+        >
+          optionList=
+          {mcuVersions.map(item => (
+            <Form.Radio key={item} value={item}>
+              {item}
+            </Form.Radio>
+          ))}
+        </Form.RadioGroup>
         <Form.Input
           field="imei"
           label="IMEI 后 6 位"
