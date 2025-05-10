@@ -25,9 +25,6 @@ export default defineConfig({
     polyfillPlugin(),
     tailwindcssPlugin(),
   ],
-  html: {
-    title: '比亚迪 OTA 验证码查询工具',
-  },
   tools: {
     sass: {
       sassOptions: {

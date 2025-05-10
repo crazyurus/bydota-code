@@ -1,0 +1,16 @@
+{
+  "title": "BYDOTA Verification Code Query Tool",
+  "modal.title": "Verification Code Query Successful",
+  "modal.content": "Please choose one of the following verification codes, which is valid within 3 hours:",
+  "modal.ok.text": "Copy the First One",
+  "modal.copy.success": "Copy Successful",
+  "modal.cancel.text": "Close",
+  "form.field.mcu": "Controller Version",
+  "form.field.mcu.placeholder": "It can be viewed in the multimedia version dialog box, for example: 13.5.5",
+  "form.field.mcu.required": "Please select the controller version",
+  "form.field.imei": "Last 6 Digits of IMEI",
+  "form.field.imei.placeholder": "It can be viewed in the multimedia version dialog box, for example: 123456",
+  "form.field.imei.required": "Please enter the correct last 6 digits of IMEI",
+  "form.button.submit": "Query",
+  "tips": "If you need to scan a QR code, please use the BYDOTA QR code assistant. Download link:"
+}

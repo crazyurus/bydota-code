@@ -1,5 +1,6 @@
 import { Button, Form, Modal, Typography, Toast } from '@douyinfe/semi-ui';
 import { useSearchParams } from '@modern-js/runtime/router';
+import { useTranslation } from 'react-i18next';
 
 import { post as generate } from '@api/generate';
 import { useLoading } from '../../hooks';
@@ -9,6 +10,7 @@ import styles from './page.module.scss';
 const mcuVersions = [13, 15, 16, 17, 18, 21, 23, 26];
 
 function IndexPage(): JSX.Element {
+  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const imei = searchParams.get('imei');
   const [handleGenerate, loading] = useLoading(async values => {
@@ -18,19 +20,17 @@ function IndexPage(): JSX.Element {
 
     if (code === 0 && data) {
       Modal.success({
-        title: '验证码查询成功',
+        title: t('modal.title'),
         content: (
-          <pre>
-            {`以下验证码请任选一个，3 小时内有效：\n${data.result.join('\n')}`}
-          </pre>
+          <pre>{`${t('modal.content')}\n${data.result.join('\n')}`}</pre>
         ),
-        okText: '复制第一个',
+        okText: t('modal.ok.text'),
         onOk() {
           navigator.clipboard.writeText(data.result[0]);
 
-          Toast.success('复制成功');
+          Toast.success(t('modal.copy.success'));
         },
-        cancelText: '关闭',
+        cancelText: t('modal.cancel.text'),
       });
     } else {
       Toast.error(message);
@@ -48,13 +48,13 @@ function IndexPage(): JSX.Element {
       >
         <Form.RadioGroup
           field="mcu"
-          label="控制器版本"
-          extraText="可在多媒体版本对话框中查看"
+          label={t('form.field.mcu')}
+          extraText={t('form.field.mcu.placeholder')}
           type="button"
           rules={[
             {
               required: true,
-              message: '请选择控制器版本',
+              message: t('form.field.mcu.required'),
             },
           ]}
         >
@@ -67,12 +67,12 @@ function IndexPage(): JSX.Element {
         </Form.RadioGroup>
         <Form.Input
           field="imei"
-          label="IMEI 后 6 位"
+          label={t('form.field.imei')}
           type="tel"
-          placeholder="可在多媒体版本对话框中查看，例如：123456"
+          placeholder={t('form.field.mcu.placeholder')}
           extraText={
             <>
-              如遇到扫描二维码，请使用 BYDOTA 二维码助手，下载链接：{' '}
+              {t('tips')}{' '}
               <Typography.Text
                 link={{
                   href: 'https://pan.quark.cn/s/f6cc8f418d62',
@@ -88,7 +88,7 @@ function IndexPage(): JSX.Element {
           rules={[
             {
               pattern: /^\d{6}$/,
-              message: '请输入正确的 IMEI 后 6 位',
+              message: t('form.field.imei.required'),
             },
           ]}
         />
@@ -99,7 +99,7 @@ function IndexPage(): JSX.Element {
             type="primary"
             theme="solid"
           >
-            查询
+            {t('form.button.submit')}
           </Button>
         </div>
       </Form>
