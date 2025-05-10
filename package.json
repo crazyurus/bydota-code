@@ -1,0 +1,64 @@
+{
+  "name": "automap-activate",
+  "version": "0.1.0",
+  "scripts": {
+    "reset": "npx rimraf ./**/node_modules",
+    "dev": "modern dev",
+    "build": "modern build",
+    "start": "modern start",
+    "serve": "modern serve",
+    "deploy": "modern deploy",
+    "new": "modern new",
+    "lint": "modern lint",
+    "prepare": "husky",
+    "upgrade": "modern upgrade"
+  },
+  "engines": {
+    "node": ">=16.18.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": [
+      "node --max_old_space_size=8192 ./node_modules/eslint/bin/eslint.js --fix --color --cache --quiet"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "dist/"
+  ],
+  "dependencies": {
+    "@douyinfe/semi-ui": "^2.73.0",
+    "@modern-js/plugin-bff": "^2.64.1",
+    "@modern-js/plugin-koa": "^2.64.1",
+    "@modern-js/plugin-polyfill": "^2.64.1",
+    "@modern-js/plugin-tailwindcss": "^2.64.1",
+    "@modern-js/prod-server": "^2.64.1",
+    "@modern-js/runtime": "^2.64.1",
+    "@semi-bot/semi-theme-automap": "^1.0.0",
+    "koa": "^2.15.3",
+    "koa-body": "^6.0.1",
+    "koa-logger": "^3.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@douyinfe/semi-rspack-plugin": "^2.73.0",
+    "@modern-js-app/eslint-config": "^2.59.0",
+    "@modern-js/app-tools": "^2.64.1",
+    "@modern-js/eslint-config": "^2.59.0",
+    "@modern-js/tsconfig": "^2.64.1",
+    "@types/jest": "^29.5.12",
+    "@types/koa": "^2.15.0",
+    "@types/koa-logger": "^3.1.5",
+    "@types/node": "^22.4.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^3.4.10",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.3"
+  }
+}
