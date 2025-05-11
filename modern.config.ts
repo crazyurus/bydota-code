@@ -40,4 +40,7 @@ export default defineConfig({
       ]);
     },
   },
+  output: {
+    polyfill: 'usage',
+  },
 });
