@@ -41,6 +41,6 @@ export default defineConfig({
     },
   },
   output: {
-    polyfill: 'usage',
+    polyfill: 'ua',
   },
 });
