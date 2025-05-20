@@ -7,7 +7,7 @@ import { useLoading } from '../../hooks';
 
 import styles from './page.module.scss';
 
-const mcuVersions = [13, 15, 16, 17, 18, 21, 23, 26];
+const mcuVersions = [13, 15, 16, 17, 18, 21, 23, 26, 31, 34];
 
 function IndexPage(): JSX.Element {
   const { t } = useTranslation();
@@ -92,7 +92,7 @@ function IndexPage(): JSX.Element {
             },
           ]}
         />
-        <div className="mt-4">
+        <div className={styles.footer}>
           <Button
             htmlType="submit"
             loading={loading}

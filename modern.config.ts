@@ -2,7 +2,6 @@ import { appTools, defineConfig } from '@modern-js/app-tools';
 import { bffPlugin } from '@modern-js/plugin-bff';
 import { koaPlugin } from '@modern-js/plugin-koa';
 import { polyfillPlugin } from '@modern-js/plugin-polyfill';
-import { tailwindcssPlugin } from '@modern-js/plugin-tailwindcss';
 import { SemiRspackPlugin } from '@douyinfe/semi-rspack-plugin';
 
 // https://modernjs.dev/en/configure/app/usage
@@ -16,14 +15,18 @@ export default defineConfig({
   runtime: {
     router: true,
   },
+  source: {
+    include: [
+      /node_modules[\\/](i18next|react-i18next|i18next-browser-languagedetector)[\\/]/,
+    ],
+  },
   plugins: [
     appTools({
-      bundler: 'experimental-rspack',
+      bundler: 'rspack',
     }),
     bffPlugin(),
     koaPlugin(),
     polyfillPlugin(),
-    tailwindcssPlugin(),
   ],
   tools: {
     sass: {
@@ -35,7 +38,6 @@ export default defineConfig({
       context.appendPlugins([
         new SemiRspackPlugin({
           theme: '@semi-bot/semi-theme-automap',
-          cssLayer: true,
         }),
       ]);
     },

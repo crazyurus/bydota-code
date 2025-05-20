@@ -10,13 +10,6 @@
       "@api/*": ["./api/lambda/*"]
     }
   },
-  "include": [
-    "src",
-    "shared",
-    "config",
-    "modern.config.ts",
-    "tailwind.config.ts",
-    "api"
-  ],
+  "include": ["src", "shared", "config", "modern.config.ts", "api"],
   "exclude": ["**/node_modules"]
 }
