@@ -12,5 +12,6 @@
   "form.field.imei.placeholder": "可在多媒体版本对话框中查看，例如：123456",
   "form.field.imei.required": "请输入正确的 IMEI 后 6 位",
   "form.button.submit": "查询",
-  "tips": "如遇到扫描二维码，请使用 BYDOTA 二维码助手，下载链接："
+  "tips": "如遇到扫描二维码，请使用 BYDOTA 二维码助手，下载链接：",
+  "mcu.version": "非 26"
 }

@@ -7,12 +7,20 @@ import { useLoading } from '../../hooks';
 
 import styles from './page.module.scss';
 
-const mcuVersions = [13, 15, 16, 17, 18, 21, 23, 26, 31, 34];
-
 function IndexPage(): JSX.Element {
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const imei = searchParams.get('imei');
+  const mcuVersions = [
+    {
+      label: t('mcu.version'),
+      value: 13,
+    },
+    {
+      label: '26',
+      value: 26,
+    },
+  ];
   const [handleGenerate, loading] = useLoading(async values => {
     const { code, message, data } = await generate({
       data: values,
@@ -60,8 +68,8 @@ function IndexPage(): JSX.Element {
         >
           optionList=
           {mcuVersions.map(item => (
-            <Form.Radio key={item} value={item}>
-              {item}
+            <Form.Radio key={item.value} value={item.value}>
+              {item.label}
             </Form.Radio>
           ))}
         </Form.RadioGroup>
