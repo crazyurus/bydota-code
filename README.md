@@ -1,4 +1,4 @@
-# 比亚迪 OTA 验证码计算工具
+# BYDOTA 验证码计算工具
 
 https://bydota.crazyurus.com/code
 

@@ -7,6 +7,9 @@ import { useLoading } from '../../hooks';
 
 import styles from './page.module.scss';
 
+const TUTORIAL_URL =
+  'https://docs.qq.com/aio/p/sc8axhs28s5bis8?p=Clj1XBwnQF9nFLyuSOK6zB';
+
 function IndexPage(): JSX.Element {
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
@@ -47,6 +50,17 @@ function IndexPage(): JSX.Element {
 
   return (
     <div className={styles.container}>
+      <div className={styles.tutorial}>
+        <span>{t('tutorial')}</span>
+        <Typography.Text
+          link={{
+            href: TUTORIAL_URL,
+            target: '_blank',
+          }}
+        >
+          {TUTORIAL_URL}
+        </Typography.Text>
+      </div>
       <Form
         initValues={{
           mcu: 13,

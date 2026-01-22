@@ -1,5 +1,6 @@
 {
-  "title": "比亚迪 OTA 验证码查询工具",
+  "title": "BYDOTA 验证码查询工具",
+  "tutorial": "DiLink 版本大全：",
   "modal.title": "验证码查询成功",
   "modal.content": "以下验证码请任选一个，3 小时内有效：",
   "modal.ok.text": "复制第一个",
