@@ -15,6 +15,9 @@
   "form.field.imei": "Last 6 Digits of IMEI",
   "form.field.imei.placeholder": "It can be viewed in the multimedia version dialog box, for example: 123456",
   "form.field.imei.required": "Please enter the correct last 6 digits of IMEI",
+  "form.field.brand": "Sub-brand",
+  "form.field.series": "Vehicle Series",
+  "form.field.model": "Model Type",
   "form.button.submit": "Query",
   "tips": "If you need to scan a QR code, please use the BYDOTA QR code assistant. Download link:",
   "mcu.version": "Not 26"

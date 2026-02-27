@@ -52,7 +52,7 @@ function RecordPage(): JSX.Element {
         <>
           <Form.RadioGroup
             field="brand"
-            label="子品牌"
+            label={t('form.field.brand')}
             type="button"
             rules={[
               {
@@ -71,7 +71,7 @@ function RecordPage(): JSX.Element {
           <Form.Select
             className={styles.select}
             field="series"
-            label="车系"
+            label={t('form.field.series')}
             placeholder="请选择车系"
             optionList={uniq(result.map(item => item['型号'])).map(item => ({
               label: item,
@@ -84,7 +84,7 @@ function RecordPage(): JSX.Element {
           <Form.Select
             className={styles.select}
             field="model"
-            label="车型"
+            label={t('form.field.model')}
             placeholder="请选择型号"
             optionList={uniq(
               result

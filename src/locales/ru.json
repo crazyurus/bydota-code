@@ -15,6 +15,9 @@
   "form.field.imei": "Последние 6 цифр IMEI",
   "form.field.imei.placeholder": "Можно посмотреть в диалоговом окне с версией мультимедиа, например: 123456",
   "form.field.imei.required": "Пожалуйста, введите правильные последние 6 цифр IMEI",
+  "form.field.brand": "Суббренд",
+  "form.field.series": "Серия автомобилей",
+  "form.field.model": "Тип модели",
   "form.button.submit": "Запрос",
   "tips": "Если вам нужно отсканировать QR-код, используйте помощник по QR-кодам BYDOTA. Ссылка для загрузки:",
   "mcu.version": "не 26"
