@@ -5,7 +5,7 @@ function Page(): null {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate('./code');
+    navigate('./record');
   }, []);
 
   return null;

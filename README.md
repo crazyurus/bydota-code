@@ -1,6 +1,6 @@
-# BYDOTA 验证码计算工具
+# BYDOTA 查询工具
 
-https://bydota.crazyurus.com/code
+https://bydota.crazyurus.com/
 
 ## Setup
 

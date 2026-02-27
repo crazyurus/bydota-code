@@ -1,6 +1,9 @@
 {
-  "title": "BYDOTA Verification Code Query Tool",
-  "tutorial": "DiLink Version Collection:",
+  "title": "BYDOTA Query Tool",
+  "tutorial.collection": "DiLink Version Collection:",
+  "tutorial.download": "DiLink Firmware Download:",
+  "tab.record": "OTA Record",
+  "tab.code": "Verification Code",
   "modal.title": "Verification Code Query Successful",
   "modal.content": "Please choose one of the following verification codes, which is valid within 3 hours:",
   "modal.ok.text": "Copy the First One",

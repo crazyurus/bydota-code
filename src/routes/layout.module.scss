@@ -20,6 +20,23 @@
   overflow-y: auto;
 }
 
+.content {
+  padding: 60px 10%;
+
+  :global(.semi-input-textarea-readonly) {
+    color: var(--semi-color-text-0);
+  }
+}
+
+.tutorial {
+  font-weight: bold;
+  margin-bottom: 24px;
+
+  .line {
+    margin-bottom: 12px;
+  }
+}
+
 .footer {
   position: fixed;
   bottom: 32px;

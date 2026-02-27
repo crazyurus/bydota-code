@@ -1,6 +1,9 @@
 {
-  "title": "BYDOTA 验证码查询工具",
-  "tutorial": "DiLink 版本大全：",
+  "title": "BYDOTA 查询工具",
+  "tutorial.collection": "DiLink 版本大全：",
+  "tutorial.download": "DiLink 多媒体固件下载：",
+  "tab.record": "记录",
+  "tab.code": "验证码",
   "modal.title": "验证码查询成功",
   "modal.content": "以下验证码请任选一个，3 小时内有效：",
   "modal.ok.text": "复制第一个",
