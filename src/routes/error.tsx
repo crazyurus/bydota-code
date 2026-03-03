@@ -1,7 +1,7 @@
 import { useRouteError } from '@modern-js/runtime/router';
 
 function ErrorBoundary(): JSX.Element {
-  const error: any = useRouteError();
+  const error = useRouteError() as { message: string };
 
   return (
     <div>

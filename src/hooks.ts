@@ -1,8 +1,6 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
-export function useLoading<F extends (...args: any) => Promise<any>>(
-  handler: F,
-): [F, boolean, Error | undefined] {
+export function useLoading<F extends (...args: any) => Promise<any>>(handler: F): [F, boolean, Error | undefined] {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error>();
   const newHandler = useCallback(
@@ -17,7 +15,7 @@ export function useLoading<F extends (...args: any) => Promise<any>>(
           setLoading(false);
         });
     },
-    [handler],
+    [handler]
   );
 
   return [newHandler as F, loading, error];

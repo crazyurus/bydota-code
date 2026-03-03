@@ -1,10 +1,9 @@
-import { Button, Form, Modal, Typography, Toast } from '@douyinfe/semi-ui';
+import { post as generate } from '@api/generate';
+import { Button, Form, Modal, Toast, Typography } from '@douyinfe/semi-ui';
 import { useSearchParams } from '@modern-js/runtime/router';
 import { useTranslation } from 'react-i18next';
 
-import { post as generate } from '@api/generate';
 import { useLoading } from '../../hooks';
-
 import styles from './page.module.scss';
 
 function CodePage(): JSX.Element {
@@ -14,31 +13,29 @@ function CodePage(): JSX.Element {
   const mcuVersions = [
     {
       label: t('mcu.version'),
-      value: 13,
+      value: 13
     },
     {
       label: '26',
-      value: 26,
-    },
+      value: 26
+    }
   ];
   const [handleGenerate, loading] = useLoading(async values => {
     const { code, message, data } = await generate({
-      data: values,
+      data: values
     });
 
     if (code === 0 && data) {
       Modal.success({
         title: t('modal.title'),
-        content: (
-          <pre>{`${t('modal.content')}\n${data.result.join('\n')}`}</pre>
-        ),
+        content: <pre>{`${t('modal.content')}\n${data.result.join('\n')}`}</pre>,
         okText: t('modal.ok.text'),
         onOk() {
           navigator.clipboard.writeText(data.result[0]);
 
           Toast.success(t('modal.copy.success'));
         },
-        cancelText: t('modal.cancel.text'),
+        cancelText: t('modal.cancel.text')
       });
     } else {
       Toast.error(message);
@@ -49,10 +46,9 @@ function CodePage(): JSX.Element {
     <Form
       initValues={{
         mcu: 13,
-        imei: imei ? imei.slice(-6) : '',
+        imei: imei ? imei.slice(-6) : ''
       }}
-      onSubmit={values => handleGenerate(values)}
-    >
+      onSubmit={values => handleGenerate(values)}>
       <Form.RadioGroup
         field="mcu"
         label={t('form.field.mcu')}
@@ -61,11 +57,9 @@ function CodePage(): JSX.Element {
         rules={[
           {
             required: true,
-            message: t('form.field.mcu.required'),
-          },
-        ]}
-      >
-        optionList=
+            message: t('form.field.mcu.required')
+          }
+        ]}>
         {mcuVersions.map(item => (
           <Form.Radio key={item.value} value={item.value}>
             {item.label}
@@ -83,9 +77,8 @@ function CodePage(): JSX.Element {
             <Typography.Text
               link={{
                 href: 'https://pan.quark.cn/s/f6cc8f418d62',
-                target: '_blank',
-              }}
-            >
+                target: '_blank'
+              }}>
               https://pan.quark.cn/s/f6cc8f418d62
             </Typography.Text>
           </>
@@ -95,17 +88,12 @@ function CodePage(): JSX.Element {
         rules={[
           {
             pattern: /^\d{6}$/,
-            message: t('form.field.imei.required'),
-          },
+            message: t('form.field.imei.required')
+          }
         ]}
       />
       <div className={styles.footer}>
-        <Button
-          htmlType="submit"
-          loading={loading}
-          type="primary"
-          theme="solid"
-        >
+        <Button htmlType="submit" loading={loading} type="primary" theme="solid">
           {t('form.button.submit')}
         </Button>
       </div>

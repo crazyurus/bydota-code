@@ -1,19 +1,18 @@
-import { useLocation, useNavigate, Outlet } from '@modern-js/runtime/router';
-import { Helmet } from '@modern-js/runtime/head';
 import { TabPane, Tabs, Typography } from '@douyinfe/semi-ui';
+import { Helmet } from '@modern-js/runtime/head';
+import { Outlet, useLocation, useNavigate } from '@modern-js/runtime/router';
 import i18n from 'i18next';
-import { initReactI18next, useTranslation } from 'react-i18next';
 import detector from 'i18next-browser-languagedetector';
+import { initReactI18next, useTranslation } from 'react-i18next';
 
 import en from '../locales/en.json';
-import zh from '../locales/zh.json';
 import ru from '../locales/ru.json';
-
+import zh from '../locales/zh.json';
 import styles from './layout.module.scss';
+
 import '../global.css';
 
-const TUTORIAL_URL =
-  'https://docs.qq.com/aio/p/sc8axhs28s5bis8?p=Clj1XBwnQF9nFLyuSOK6zB';
+const TUTORIAL_URL = 'https://docs.qq.com/aio/p/sc8axhs28s5bis8?p=Clj1XBwnQF9nFLyuSOK6zB';
 const DOWNLOAD_URL = 'https://pan.quark.cn/s/5d503c2600f0';
 
 // eslint-disable-next-line import/no-named-as-default-member
@@ -23,19 +22,19 @@ i18n
   .init({
     resources: {
       en: {
-        translation: en,
+        translation: en
       },
       zh: {
-        translation: zh,
+        translation: zh
       },
       ru: {
-        translation: ru,
-      },
+        translation: ru
+      }
     },
     fallbackLng: 'en',
     interpolation: {
-      escapeValue: false,
-    },
+      escapeValue: false
+    }
   });
 
 function Layout(): JSX.Element {
@@ -46,7 +45,7 @@ function Layout(): JSX.Element {
 
   const handleChange = (tab: string) => {
     navigate(`/${tab}`, {
-      replace: true,
+      replace: true
     });
   };
 
@@ -64,9 +63,8 @@ function Layout(): JSX.Element {
               <Typography.Text
                 link={{
                   href: TUTORIAL_URL,
-                  target: '_blank',
-                }}
-              >
+                  target: '_blank'
+                }}>
                 {TUTORIAL_URL}
               </Typography.Text>
             </div>
@@ -75,9 +73,8 @@ function Layout(): JSX.Element {
               <Typography.Text
                 link={{
                   href: DOWNLOAD_URL,
-                  target: '_blank',
-                }}
-              >
+                  target: '_blank'
+                }}>
                 {DOWNLOAD_URL}
               </Typography.Text>
             </div>
@@ -89,10 +86,7 @@ function Layout(): JSX.Element {
           <Outlet />
         </div>
       </div>
-      <footer
-        className={styles.footer}
-        onClick={() => window.open('https://crazyurus.com/')}
-      >
+      <footer className={styles.footer} onClick={() => window.open('https://crazyurus.com/')}>
         &copy; Cr4zy Uru5
       </footer>
     </div>

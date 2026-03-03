@@ -1,30 +1,27 @@
-import { Form, Table } from '@douyinfe/semi-ui';
-import { useTranslation } from 'react-i18next';
-import { useState, useRef, type ComponentProps } from 'react';
-import { uniq } from 'lodash-es';
-
 import { post as getRecord } from '@api/record';
+import { Form, Table } from '@douyinfe/semi-ui';
 import { brands } from '@shared/constant';
+import { uniq } from 'lodash-es';
+import { useRef, useState, type ComponentProps } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import styles from './page.module.scss';
 
-type RadioChangeEvent = Parameters<
-  NonNullable<ComponentProps<typeof Form.RadioGroup>['onChange']>
->[0];
+type RadioChangeEvent = Parameters<NonNullable<ComponentProps<typeof Form.RadioGroup>['onChange']>>[0];
 
 const columns = [
   {
     title: '车型',
-    dataIndex: '车型',
+    dataIndex: '车型'
   },
   {
     title: '车辆版本号',
-    dataIndex: '车辆版本号',
+    dataIndex: '车辆版本号'
   },
   {
     title: '推送时间',
-    dataIndex: '推送时间',
-  },
+    dataIndex: '推送时间'
+  }
 ];
 
 function RecordPage(): JSX.Element {
@@ -37,8 +34,8 @@ function RecordPage(): JSX.Element {
 
     const result = await getRecord({
       data: {
-        brand: e.target.value,
-      },
+        brand: e.target.value
+      }
     });
 
     if (result.data) {
@@ -56,12 +53,10 @@ function RecordPage(): JSX.Element {
             type="button"
             rules={[
               {
-                required: true,
-              },
+                required: true
+              }
             ]}
-            onChange={handleRecord}
-          >
-            optionList=
+            onChange={handleRecord}>
             {brands.map(item => (
               <Form.Radio key={item.id} value={item.id}>
                 {item.name}
@@ -75,7 +70,7 @@ function RecordPage(): JSX.Element {
             placeholder="请选择车系"
             optionList={uniq(result.map(item => item['型号'])).map(item => ({
               label: item,
-              value: item,
+              value: item
             }))}
             emptyContent="请先选择子品牌"
             showClear
@@ -87,12 +82,10 @@ function RecordPage(): JSX.Element {
             label={t('form.field.model')}
             placeholder="请选择型号"
             optionList={uniq(
-              result
-                .filter(item => item['型号'] === formState.values.series)
-                .map(item => item['车系']),
+              result.filter(item => item['型号'] === formState.values.series).map(item => item['车系'])
             ).map(item => ({
               label: item,
-              value: item,
+              value: item
             }))}
             emptyContent="请先选择车系"
             showClear
@@ -101,9 +94,7 @@ function RecordPage(): JSX.Element {
             {formState.values.model ? (
               <Table
                 columns={columns}
-                dataSource={result.filter(
-                  item => item['车系'] === formState.values.model,
-                )}
+                dataSource={result.filter(item => item['车系'] === formState.values.model)}
                 pagination={false}
               />
             ) : null}

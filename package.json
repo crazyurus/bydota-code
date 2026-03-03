@@ -2,17 +2,14 @@
   "name": "automap-activate",
   "version": "0.1.0",
   "scripts": {
-    "reset": "npx rimraf ./**/node_modules",
-    "dev": "modern dev",
     "build": "modern build",
-    "start": "modern start",
-    "serve": "modern serve",
     "deploy": "modern deploy",
+    "dev": "modern dev",
     "lint": "modern lint",
-    "prepare": "husky"
-  },
-  "engines": {
-    "node": ">=16.18.1"
+    "prepare": "husky",
+    "reset": "npx rimraf ./**/node_modules",
+    "serve": "modern serve",
+    "start": "modern start"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mjs,cjs}": [
@@ -45,6 +42,7 @@
   },
   "devDependencies": {
     "@douyinfe/semi-rspack-plugin": "^2.91.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@modern-js-app/eslint-config": "^2.59.0",
     "@modern-js/app-tools": "^3.0.3",
     "@modern-js/eslint-config": "^2.59.0",
@@ -53,12 +51,24 @@
     "@types/node": "^22.4.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
     "husky": "^9.1.4",
     "lint-staged": "^15.2.9",
-    "prettier": "^3.3.3",
+    "prettier": "^3.8.1",
+    "prettier-plugin-packagejson": "^3.0.0",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=16.18.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "eslint-config-prettier": "^9.1.2",
+      "eslint-plugin-prettier": "^5.5.5",
+      "prettier": "^3.8.1"
+    }
   }
 }
