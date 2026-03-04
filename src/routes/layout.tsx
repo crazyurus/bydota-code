@@ -13,7 +13,6 @@ import styles from './layout.module.scss';
 import '../global.css';
 
 const TUTORIAL_URL = 'https://docs.qq.com/aio/p/sc8axhs28s5bis8?p=Clj1XBwnQF9nFLyuSOK6zB';
-const DOWNLOAD_URL = 'https://pan.quark.cn/s/5d503c2600f0';
 
 // eslint-disable-next-line import/no-named-as-default-member
 i18n
@@ -66,16 +65,6 @@ function Layout(): JSX.Element {
                   target: '_blank'
                 }}>
                 {TUTORIAL_URL}
-              </Typography.Text>
-            </div>
-            <div className={styles.line}>
-              <span>{t('tutorial.download')}</span>
-              <Typography.Text
-                link={{
-                  href: DOWNLOAD_URL,
-                  target: '_blank'
-                }}>
-                {DOWNLOAD_URL}
               </Typography.Text>
             </div>
           </div>
